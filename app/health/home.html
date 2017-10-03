@@ -1,0 +1,16 @@
+<div id="ui-tabs-view">
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                <span style="padding: 10px;font-size: 16px;" data-ng-bind="vm.title"></span>
+                <span style="padding-right: 10px;" class="pull-right" data-ng-bind="vm.localTime"></span>
+            </div>
+        </div>
+        <div class="row">
+            <uib-tabset justified=true active="vm.active">
+                <uib-tab data-ng-repeat="ele in vm.tabViews" heading="{{ele.viewName}}" index="$index" select="vm.go(ele.routeName)"></uib-tab>
+                <ui-view></ui-view>
+            </uib-tabset>
+        </div>
+    </div>
+</div>

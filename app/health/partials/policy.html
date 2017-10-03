@@ -1,0 +1,26 @@
+<div id="policy-id">
+    <form name="policy-form">
+        <div class="row">
+            <div class="form-group">
+                <label for="Product" class="control-label col-sm-2">Product</label>
+                <div class="col-sm-4">
+                    <select required class="form-control" ng-model="vm.selectedProduct" id="Product" ng-options="item.id as item.name for item in vm.products"></select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="Plan-name" class="control-label col-sm-2">Plan name</label>
+                <div class="col-sm-4">
+                    <select required class="form-control" ng-model="vm.selectedPlan" id="Plan" ng-options="item.id as item.name for item in vm.products[vm.selectedProduct-1].policy"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1 col-md-offset-5" style="margin-top: 2%;margin-bottom: 2%">
+                <button class="btn btn-primary" ng-disabled="policy-form.$invalid" ng-click="vm.gotoRoute(1)">Next</button>
+            </div>
+        </div>
+    </form>
+</div>
